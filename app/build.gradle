@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.example.harald.runwithme2"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:support-vector-drawable:25.3.1'
+    compile 'com.google.android.gms:play-services-maps:10.2.6'
+
+
+    // MessageFormat
+    compile group: 'com.google.protobuf', name: 'protobuf-java', version: '3.2.0'
+    // Connectivity
+    compile group: 'org.eclipse.paho', name: 'org.eclipse.paho.client.mqttv3', version: '1.1.1'
+    // Logging
+    //runtime group: 'ch.qos.logback', name: 'logback-classic', version:'1.2.3'
+    //runtime group: 'ch.qos.logback', name: 'logback-core', version:'1.2.3'
+    provided "ch.qos.logback:logback-classic:1.2.3"
+    provided"ch.qos.logback:logback-core:1.2.3"
+    compile group: 'org.slf4j', name: 'slf4j-api', version:'1.7.25'
+
+    //runtime group: 'org.slf4j', name: 'jcl-over-slf4j', version:'1.7.25'
+    //runtime group: 'org.slf4j', name: 'log4j-over-slf4j', version:'1.7.25'
+    provided "org.slf4j:jcl-over-slf4j:1.7.25"
+    provided "org.slf4j:log4j-over-slf4j:1.7.25"
+
+    testCompile 'junit:junit:4.12'
+}
+
+
+
+

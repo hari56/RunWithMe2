@@ -1,0 +1,29 @@
+
+syntax = "proto2";
+package mymqttmessages;
+
+option java_package = "com.example.harald.runwithme2.mymqttmessages";
+option java_outer_classname = "ProtobufMessages";
+
+
+
+message PathItemMessage {
+  
+  required uint32 source = 1;
+  oneof msgtype {
+    GPSMessage gps = 101;
+    MetaValues meta = 102;
+  }
+}
+
+message MetaValues {
+  required uint64 time = 1;
+  required double distance = 2;
+  required double speed = 3;
+  required uint32 steps = 4;
+}
+
+message GPSMessage {
+  required double latitude = 1;
+  required double longitude = 2;
+}
