@@ -32,12 +32,15 @@ public class ProtobufMqttProgram {
 	private String clientId;
 	private Collection<String> topics;
 
-	public ProtobufMqttProgram() {
-		this("tcp://iot.soft.uni-linz.ac.at:1883", MqttAsyncClient.generateClientId(),
-				Collections.singleton("protobuf"), null);
+	//gives access to members of the model
+	private IProtobufBridge modelBridge;
+
+	public ProtobufMqttProgram(IProtobufBridge modelBridge) {
+		this(modelBridge, "tcp://iot.soft.uni-linz.ac.at:1883", MqttAsyncClient.generateClientId(),
+				Collections.singleton("protobuf"), "RunWithMe2");
 	}
 
-	public ProtobufMqttProgram(String broker, String clientId, Collection<String> topics, String sendTopic) {
+	public ProtobufMqttProgram(IProtobufBridge modelBridge, String broker, String clientId, Collection<String> topics, String sendTopic) {
 		if (topics != null && topics.size() == 1 && sendTopic == null) {
 			sendTopic = topics.iterator().next();
 		}
@@ -50,6 +53,7 @@ public class ProtobufMqttProgram {
 		this.broker = broker;
 		this.clientId = clientId;
 		this.topics = topics;
+		this.modelBridge = modelBridge;
 		setup();
 	}
 
@@ -133,20 +137,11 @@ public class ProtobufMqttProgram {
 		LOG.error("exception raised (2): error", me);
 	}
 
-	public void sendMetaValues(long time, double distance, double speed, int steps) throws MqttException {
+
+	public void sendPathItem(double latitude, double longitude, long time, double distance, double speed, int steps) throws MqttPersistenceException, MqttException {
 		if (connected) {
-			LOG.debug("Publishing Meta {}, {}, {}, {}", time , distance, speed, steps);
-			MqttMessage message = this.genericMetaMessage(time, distance, speed, steps);
-			message.setQos(qos);
-			sampleClient.publish(sendTopic, message);
-		} else {
-			LOG.error("connect first before sending");
-		}
-	}
-	private void sendGPSValues(double latitude, double longitude) throws MqttPersistenceException, MqttException {
-		if (connected) {
-			LOG.debug("Publishing gps: {}, {}", latitude, longitude);
-			MqttMessage message = this.genericGPSMessage(latitude, longitude);
+			LOG.debug("Publishing pathItem: {}, {}, {}, {}, {}, {}", latitude, longitude, time, distance, speed, steps);
+			MqttMessage message = this.genericPathItemMessage(latitude, longitude, time, distance, speed, steps);
 			message.setQos(qos);
 			sampleClient.publish(sendTopic, message);
 		} else {
@@ -154,7 +149,7 @@ public class ProtobufMqttProgram {
 		}
 	}
 
-	private MqttMessage genericGPSMessage(double latitude, double longitude) {
+	private MqttMessage genericPathItemMessage(double latitude, double longitude, long time, double distance, double speed, int steps) {
 		// General Message
 		ProtobufMessages.PathItemMessage.Builder builder = ProtobufMessages.PathItemMessage.newBuilder();
 		builder.setSource(clientId.hashCode());
@@ -164,14 +159,6 @@ public class ProtobufMqttProgram {
 		gps.setLatitude(latitude);
 		gps.setLongitude(longitude);
 		builder.setGps(gps);
-		MqttMessage message = new MqttMessage(builder.build().toByteArray());
-		return message;
-	}
-	
-	private MqttMessage genericMetaMessage(long time, double distance, double speed, int steps) {
-		// General Message
-		ProtobufMessages.PathItemMessage.Builder builder = ProtobufMessages.PathItemMessage.newBuilder();
-		builder.setSource(clientId.hashCode());
 
 		// Concrete Message
 		ProtobufMessages.MetaValues.Builder meta = ProtobufMessages.MetaValues.newBuilder();
@@ -180,13 +167,12 @@ public class ProtobufMqttProgram {
 		meta.setDistance(distance);
 		meta.setSpeed(speed);
 		meta.setSteps(steps);
-		
+
 		builder.setMeta(meta);
+
 		MqttMessage message = new MqttMessage(builder.build().toByteArray());
 		return message;
 	}
-	
-	
 
 
 	public void close() {

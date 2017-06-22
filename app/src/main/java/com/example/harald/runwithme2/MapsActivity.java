@@ -26,7 +26,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener,
-        GoogleMap.OnMarkerClickListener, GoogleMap.OnMarkerDragListener, GoogleMap.OnMapClickListener {
+        GoogleMap.OnMarkerClickListener, GoogleMap.OnMarkerDragListener, GoogleMap.OnMapClickListener, IMessageConsumer {
 
     private Model model = null;
     private GoogleMap googleMap;
@@ -74,10 +74,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         {
             super.onCreate(savedInstanceState);
 
+            //restore the model
             Bundle b = this.getIntent().getExtras();
             if (b != null) {
                 this.model = (Model) b.getSerializable("model");
-
+                this.model.setupProtoBuf(this);
             }
 
             setContentView(R.layout.activity_maps);
@@ -87,11 +88,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mapFragment.getMapAsync(this);
 
             //gets the location of the device
-            locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+            this.locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
             if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
                     || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
 
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+                this.locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
             }//end of if
         }
         catch(Exception ex)
@@ -134,11 +135,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onLocationChanged(Location location) {
 
-       try {
+        //gps sensor input
+       try
+       {
            LatLng currentLatLng = new LatLng(location.getLatitude(), location.getLongitude());
-           if(this.model.getStartPos() == null)
+           if(this.model.getLocal().getStartPos() == null)
            {
-               this.model.setStartPos(new GPSPosition(currentLatLng));
+               this.model.getLocal().setStartPos(new GPSPosition(currentLatLng));
                Toast.makeText(getApplicationContext(), "Startpunkt festgelegt. EndPunkt?", Toast.LENGTH_LONG).show();
                this.updateMap();
 
@@ -158,7 +161,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
            {
                //currentMarker.position(currentLatLng);
                if(this.model.getCurrentAction() == Model.ACTION.ACTIVE_RUN)
-                   this.model.addItem(new GPSPosition(currentLatLng));
+                   this.model.getLocal().addItem(new GPSPosition(currentLatLng));
            }
        }
        catch(Exception ex)
@@ -186,7 +189,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapClick(LatLng latLng) {
         if(this.model.getCurrentAction() == Model.ACTION.SELECT_ENDPOINT)
         {
-            this.model.setEndPos(new GPSPosition(latLng));
+            this.model.getLocal().setEndPos(new GPSPosition(latLng));
             this.updateMap();
 
             Toast.makeText(getApplicationContext(), "Zielpunkt festgelegt", Toast.LENGTH_LONG).show();
@@ -197,7 +200,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void updateMap() {
         this.googleMap.clear();
 
-        GPSPosition startPos = this.model.getStartPos();
+        GPSPosition startPos = this.model.getLocal().getStartPos();
         if(startPos != null)
         {
             this.googleMap.addMarker(new MarkerOptions()
@@ -207,7 +210,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         }
 
-        GPSPosition endPos = this.model.getEndPos();
+        GPSPosition endPos = this.model.getLocal().getEndPos();
         if(endPos != null)
         {
             this.googleMap.addMarker(new MarkerOptions()
@@ -217,17 +220,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
         }
 
+        //for each player
+        this.updateMap(this.model.getLocal());
+        this.updateMap(this.model.getRemote());
+    }
+    public void updateMap(Competitor competitor) {
+
         ArrayList<LatLng> values = new ArrayList<>();
-        for(PathItem item : this.model.getItems())
+        for(PathItem item : competitor.getItems())
         {
             values.add(item.getPosition().getValue());
         }
         this.googleMap.addPolyline((new PolylineOptions())
-                .addAll(values).width(5).color(Color.BLUE)
+                .addAll(values).width(5).color(competitor.getColor())
                 .geodesic(true));
-    }
 
-    private void showMessage(String message)
+    }
+    public void showMessage(String message)
     {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
