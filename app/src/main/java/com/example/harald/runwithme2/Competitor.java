@@ -1,7 +1,5 @@
 package com.example.harald.runwithme2;
 
-import android.graphics.Color;
-
 import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.io.Serializable;
@@ -18,17 +16,21 @@ public class Competitor implements Serializable {
     private ArrayList<PathItem> items;
     private PathItem lastItem;
     private Double desiredSpeed;
-    private int color;
-    private IMessageConsumer consumer;
+    private Integer color;
+    private Boolean local;
+    private IDataConsumer consumer;
+    private Boolean hasWon;
 
     //protobuf communication
     private transient ProtobufMqttProgram protoBuf = null;
 
-    public Competitor(int color) {
+    public Competitor(int color, boolean local) {
         this.items = new ArrayList<>();
         this.color = color;
+        this.local = local;
+        this.hasWon = false;
     }
-    public void setProtoBuf(ProtobufMqttProgram protoBuf, IMessageConsumer consumer) {
+    public void setProtoBuf(ProtobufMqttProgram protoBuf, IDataConsumer consumer) {
         this.protoBuf = protoBuf;
         this.consumer = consumer;
     }
@@ -44,21 +46,42 @@ public class Competitor implements Serializable {
             speed = this.speed(distance, this.lastItem.getTime(), now);
         }
 
-        this.lastItem = new PathItem(pos, now, distance, speed);
+        this.addItem(pos, now, distance, speed, -1);
+    }
+    public void addItem(GPSPosition position, Long time, Double distance, Double speed, Integer steps)
+    {
+        this.lastItem = new PathItem(position, time, distance, speed, -1);
         this.items.add(this.lastItem);
 
-        if(this.protoBuf != null)
+        //update the google mapd
+        this.consumer.updateMap();
+
+        if(this.endPos != null)
+        {
+            if (this.distance(position, this.endPos) <= 0.01) {
+
+                if (this.local) {
+                    this.hasWon = true;
+                    this.consumer.showMessage("You won");
+                } else
+                    this.consumer.showMessage("You lost");
+            }
+        }
+
+        //send the data only if this the local player and the connection is established
+        if(this.local && this.protoBuf != null)
         {
             try
             {
-                this.protoBuf.sendPathItem(pos.getLatitude(), pos.getLongitude(), now, distance, speed, 1);
+                this.protoBuf.sendPathItem(position.getLatitude(), position.getLongitude(), time, distance, speed, steps);
             } catch (MqttException e) {
                 this.consumer.showMessage(e.toString());
             }
         }
-
-
     }
+
+
+
     public void setStartPos(GPSPosition startPoint) {
         this.startPos = startPoint;
         this.addItem(this.startPos);

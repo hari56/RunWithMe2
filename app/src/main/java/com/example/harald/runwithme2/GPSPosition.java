@@ -16,6 +16,10 @@ public class GPSPosition implements Serializable {
         this.longitude = position.longitude;
         this.latitude = position.latitude;
     }
+    public GPSPosition(Double longitude, Double latitude) {
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
 
     public LatLng getValue() { return new LatLng(latitude, longitude);}
     public Double getLongitude() { return this.longitude; }

@@ -107,19 +107,18 @@ public class ProtobufMqttProgram {
 
 	private void processProtobufMessage(byte[] data) {
 
-		ProtobufMessages.PathItemMessage pbm;
+		ProtobufMessages.RunMessage pbm;
 		try {
-			pbm = ProtobufMessages.PathItemMessage.parseFrom(data);
+			pbm = ProtobufMessages.RunMessage.parseFrom(data);
 			
 			switch (pbm.getMsgtypeCase()) {
-			case GPS:
-				ProtobufMessages.GPSMessage gpsMessage = pbm.getGps();
-			    LOG.info("got gps latitude = {} longitude = {}", gpsMessage.getLatitude(), gpsMessage.getLongitude());
+				case PATHITEM:
+				ProtobufMessages.PathItem pathItemMessage = pbm.getPathItem();
+					this.modelBridge.getRemote().addItem(new GPSPosition(pathItemMessage.getLongitude(), pathItemMessage.getLatitude()),
+							pathItemMessage.getTime(), pathItemMessage.getDistance(), pathItemMessage.getSpeed(), pathItemMessage.getSteps());
+			    LOG.info("got gps latitude = {} longitude = {} got meta values time {} distance {} speed {}", pathItemMessage.getLatitude(), pathItemMessage.getLongitude(),  pathItemMessage.getTime(), pathItemMessage.getDistance(), pathItemMessage.getSpeed(), pathItemMessage.getSteps());
 				break;
-			case META:
-				ProtobufMessages.MetaValues metaValues = pbm.getMeta();
-				LOG.info("got meta values time {} distance {} speed {}", metaValues.getTime(), metaValues.getDistance(), metaValues.getSpeed(), metaValues.getSteps());
-				break; 	
+
 				
 			default:
 				LOG.error("invalid msgtype {}  found", pbm.getMsgtypeCase().name());
@@ -151,24 +150,18 @@ public class ProtobufMqttProgram {
 
 	private MqttMessage genericPathItemMessage(double latitude, double longitude, long time, double distance, double speed, int steps) {
 		// General Message
-		ProtobufMessages.PathItemMessage.Builder builder = ProtobufMessages.PathItemMessage.newBuilder();
+		ProtobufMessages.RunMessage.Builder builder = ProtobufMessages.RunMessage.newBuilder();
 		builder.setSource(clientId.hashCode());
 
 		// Concrete Message
-		ProtobufMessages.GPSMessage.Builder gps = ProtobufMessages.GPSMessage.newBuilder();
-		gps.setLatitude(latitude);
-		gps.setLongitude(longitude);
-		builder.setGps(gps);
-
-		// Concrete Message
-		ProtobufMessages.MetaValues.Builder meta = ProtobufMessages.MetaValues.newBuilder();
-
-		meta.setTime(time);
-		meta.setDistance(distance);
-		meta.setSpeed(speed);
-		meta.setSteps(steps);
-
-		builder.setMeta(meta);
+		ProtobufMessages.PathItem.Builder pathItem = ProtobufMessages.PathItem.newBuilder();
+		pathItem.setLatitude(latitude);
+		pathItem.setLongitude(longitude);
+		pathItem.setTime(time);
+		pathItem.setDistance(distance);
+		pathItem.setSpeed(speed);
+		pathItem.setSteps(steps);
+		builder.setPathItem(pathItem);
 
 		MqttMessage message = new MqttMessage(builder.build().toByteArray());
 		return message;

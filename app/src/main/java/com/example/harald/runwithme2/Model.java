@@ -3,7 +3,6 @@ package com.example.harald.runwithme2;
 import android.graphics.Color;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  * Created by Harald on 04.06.2017.
@@ -28,10 +27,10 @@ public class Model implements Serializable, IProtobufBridge {
     private transient ProtobufMqttProgram protoBuf = null;
 
     public Model() {
-        this.local = new Competitor(Color.BLUE);
-        this.remote = new Competitor(Color.RED);
+        this.local = new Competitor(Color.BLUE, true);
+        this.remote = new Competitor(Color.RED, false);
     }
-    public void setupProtoBuf(IMessageConsumer consumer) {
+    public void setupProtoBuf(IDataConsumer consumer) {
         this.protoBuf = new ProtobufMqttProgram(this);
         this.local.setProtoBuf(this.protoBuf, consumer);
         this.remote.setProtoBuf(this.protoBuf, consumer);

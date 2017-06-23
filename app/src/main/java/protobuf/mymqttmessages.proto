@@ -7,23 +7,19 @@ option java_outer_classname = "ProtobufMessages";
 
 
 
-message PathItemMessage {
+message RunMessage {
   
   required uint32 source = 1;
   oneof msgtype {
-    GPSMessage gps = 101;
-    MetaValues meta = 102;
+    PathItem pathItem = 101;
   }
 }
 
-message MetaValues {
-  required uint64 time = 1;
-  required double distance = 2;
-  required double speed = 3;
-  required uint32 steps = 4;
-}
-
-message GPSMessage {
+message PathItem {
   required double latitude = 1;
   required double longitude = 2;
+  required uint64 time = 3;
+  required double distance = 4;
+  required double speed = 5;
+  required uint32 steps = 6;
 }

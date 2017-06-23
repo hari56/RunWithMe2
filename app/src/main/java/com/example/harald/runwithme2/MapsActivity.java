@@ -2,8 +2,8 @@ package com.example.harald.runwithme2;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -26,13 +26,15 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener,
-        GoogleMap.OnMarkerClickListener, GoogleMap.OnMarkerDragListener, GoogleMap.OnMapClickListener, IMessageConsumer {
+        GoogleMap.OnMarkerClickListener, GoogleMap.OnMarkerDragListener, GoogleMap.OnMapClickListener, IDataConsumer {
 
     private Model model = null;
     private GoogleMap googleMap;
     private LocationManager locationManager;
     private LatLng fromPosition = null;
     private LatLng toPosition = null;
+
+    private boolean test = true;
 
     private static final LatLng LINZ = new LatLng(48.306072,14.286293);
     private static final LatLng WELS = new LatLng(48.156647,14.024618);
@@ -94,6 +96,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 this.locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
             }//end of if
+
+
         }
         catch(Exception ex)
         {
@@ -121,6 +125,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             this.showMessage(String.valueOf(speed));
             this.updateMap();
             */
+
+            //restore infos
+            this.updateMap();
         }
         catch(Exception ex)
         {
@@ -186,14 +193,45 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     @Override
-    public void onMapClick(LatLng latLng) {
-        if(this.model.getCurrentAction() == Model.ACTION.SELECT_ENDPOINT)
-        {
-            this.model.getLocal().setEndPos(new GPSPosition(latLng));
-            this.updateMap();
+    public void onMapClick(LatLng currentLatLng) {
 
-            Toast.makeText(getApplicationContext(), "Zielpunkt festgelegt", Toast.LENGTH_LONG).show();
-            this.model.setCurrentAction(Model.ACTION.ACTIVE_RUN);
+        //for testing
+        if(this.test)
+        {
+            if(this.model.getCurrentAction() == Model.ACTION.SELECT_STARTPOINT)
+            {
+                this.model.getLocal().setStartPos(new GPSPosition(currentLatLng));
+                Toast.makeText(getApplicationContext(), "Startpunkt festgelegt. EndPunkt?", Toast.LENGTH_LONG).show();
+                this.updateMap();
+
+                this.googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 13));
+                this.model.setCurrentAction(Model.ACTION.SELECT_ENDPOINT);
+            }
+            else if (this.model.getCurrentAction() == Model.ACTION.ACTIVE_RUN)
+            {
+                this.model.getLocal().addItem(new GPSPosition(currentLatLng));
+            }
+            else if(this.model.getCurrentAction() == Model.ACTION.SELECT_ENDPOINT)
+            {
+                this.model.getLocal().setEndPos(new GPSPosition(currentLatLng));
+                this.updateMap();
+
+                Toast.makeText(getApplicationContext(), "Zielpunkt festgelegt", Toast.LENGTH_LONG).show();
+                this.model.setCurrentAction(Model.ACTION.ACTIVE_RUN);
+            }
+
+        }
+        else
+        {//normal pgrogam mode
+
+            if(this.model.getCurrentAction() == Model.ACTION.SELECT_ENDPOINT)
+            {
+                this.model.getLocal().setEndPos(new GPSPosition(currentLatLng));
+                this.updateMap();
+
+                Toast.makeText(getApplicationContext(), "Zielpunkt festgelegt", Toast.LENGTH_LONG).show();
+                this.model.setCurrentAction(Model.ACTION.ACTIVE_RUN);
+            }
 
         }
     }
@@ -239,5 +277,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void showMessage(String message)
     {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+    }
+
+    public void onBackPressed()
+    {
+        /*
+        try
+        {
+            Intent menuIntent = new Intent(this, MainActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("model", model);
+            menuIntent.putExtras(bundle);
+            startActivity(menuIntent);
+        }
+        catch (Exception ex)
+        {
+            this.showMessage(ex.toString());
+        }
+        */
+
+        //super.onBackPressed();  // optional depending on your needs
     }
 }

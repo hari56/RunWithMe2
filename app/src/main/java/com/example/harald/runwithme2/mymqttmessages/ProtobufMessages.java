@@ -14,8 +14,8 @@ public final class ProtobufMessages {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface PathItemMessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:mymqttmessages.PathItemMessage)
+  public interface RunMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:mymqttmessages.RunMessage)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -28,45 +28,32 @@ public final class ProtobufMessages {
     int getSource();
 
     /**
-     * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+     * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
      */
-    boolean hasGps();
+    boolean hasPathItem();
     /**
-     * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+     * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
      */
-    com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage getGps();
+    com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem getPathItem();
     /**
-     * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+     * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
      */
-    com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessageOrBuilder getGpsOrBuilder();
+    com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemOrBuilder getPathItemOrBuilder();
 
-    /**
-     * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-     */
-    boolean hasMeta();
-    /**
-     * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-     */
-    com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues getMeta();
-    /**
-     * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-     */
-    com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValuesOrBuilder getMetaOrBuilder();
-
-    com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage.MsgtypeCase getMsgtypeCase();
+    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage.MsgtypeCase getMsgtypeCase();
   }
   /**
-   * Protobuf type {@code mymqttmessages.PathItemMessage}
+   * Protobuf type {@code mymqttmessages.RunMessage}
    */
-  public  static final class PathItemMessage extends
+  public  static final class RunMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:mymqttmessages.PathItemMessage)
-      PathItemMessageOrBuilder {
-    // Use PathItemMessage.newBuilder() to construct.
-    private PathItemMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:mymqttmessages.RunMessage)
+      RunMessageOrBuilder {
+    // Use RunMessage.newBuilder() to construct.
+    private RunMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PathItemMessage() {
+    private RunMessage() {
       source_ = 0;
     }
 
@@ -75,7 +62,7 @@ public final class ProtobufMessages {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PathItemMessage(
+    private RunMessage(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -104,31 +91,17 @@ public final class ProtobufMessages {
               break;
             }
             case 810: {
-              com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.Builder subBuilder = null;
+              com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.Builder subBuilder = null;
               if (msgtypeCase_ == 101) {
-                subBuilder = ((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) msgtype_).toBuilder();
+                subBuilder = ((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) msgtype_).toBuilder();
               }
               msgtype_ =
-                  input.readMessage(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.PARSER, extensionRegistry);
+                  input.readMessage(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) msgtype_);
+                subBuilder.mergeFrom((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) msgtype_);
                 msgtype_ = subBuilder.buildPartial();
               }
               msgtypeCase_ = 101;
-              break;
-            }
-            case 818: {
-              com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.Builder subBuilder = null;
-              if (msgtypeCase_ == 102) {
-                subBuilder = ((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) msgtype_).toBuilder();
-              }
-              msgtype_ =
-                  input.readMessage(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) msgtype_);
-                msgtype_ = subBuilder.buildPartial();
-              }
-              msgtypeCase_ = 102;
               break;
             }
           }
@@ -145,14 +118,14 @@ public final class ProtobufMessages {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_PathItemMessage_descriptor;
+      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_RunMessage_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_PathItemMessage_fieldAccessorTable
+      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_RunMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage.class, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage.Builder.class);
+              com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage.class, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage.Builder.class);
     }
 
     private int bitField0_;
@@ -160,11 +133,10 @@ public final class ProtobufMessages {
     private java.lang.Object msgtype_;
     public enum MsgtypeCase
         implements com.google.protobuf.Internal.EnumLite {
-      GPS(101),
-      META(102),
+      PATHITEM(101),
       MSGTYPE_NOT_SET(0);
       private final int value;
-      MsgtypeCase(int value) {
+      private MsgtypeCase(int value) {
         this.value = value;
       }
       /**
@@ -177,8 +149,7 @@ public final class ProtobufMessages {
 
       public static MsgtypeCase forNumber(int value) {
         switch (value) {
-          case 101: return GPS;
-          case 102: return META;
+          case 101: return PATHITEM;
           case 0: return MSGTYPE_NOT_SET;
           default: return null;
         }
@@ -186,7 +157,7 @@ public final class ProtobufMessages {
       public int getNumber() {
         return this.value;
       }
-    }
+    };
 
     public MsgtypeCase
     getMsgtypeCase() {
@@ -209,56 +180,30 @@ public final class ProtobufMessages {
       return source_;
     }
 
-    public static final int GPS_FIELD_NUMBER = 101;
+    public static final int PATHITEM_FIELD_NUMBER = 101;
     /**
-     * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+     * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
      */
-    public boolean hasGps() {
+    public boolean hasPathItem() {
       return msgtypeCase_ == 101;
     }
     /**
-     * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+     * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
      */
-    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage getGps() {
+    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem getPathItem() {
       if (msgtypeCase_ == 101) {
-         return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) msgtype_;
+         return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) msgtype_;
       }
-      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.getDefaultInstance();
+      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.getDefaultInstance();
     }
     /**
-     * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+     * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
      */
-    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessageOrBuilder getGpsOrBuilder() {
+    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemOrBuilder getPathItemOrBuilder() {
       if (msgtypeCase_ == 101) {
-         return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) msgtype_;
+         return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) msgtype_;
       }
-      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.getDefaultInstance();
-    }
-
-    public static final int META_FIELD_NUMBER = 102;
-    /**
-     * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-     */
-    public boolean hasMeta() {
-      return msgtypeCase_ == 102;
-    }
-    /**
-     * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-     */
-    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues getMeta() {
-      if (msgtypeCase_ == 102) {
-         return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) msgtype_;
-      }
-      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.getDefaultInstance();
-    }
-    /**
-     * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-     */
-    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValuesOrBuilder getMetaOrBuilder() {
-      if (msgtypeCase_ == 102) {
-         return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) msgtype_;
-      }
-      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.getDefaultInstance();
+      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -271,14 +216,8 @@ public final class ProtobufMessages {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (hasGps()) {
-        if (!getGps().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      if (hasMeta()) {
-        if (!getMeta().isInitialized()) {
+      if (hasPathItem()) {
+        if (!getPathItem().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -293,10 +232,7 @@ public final class ProtobufMessages {
         output.writeUInt32(1, source_);
       }
       if (msgtypeCase_ == 101) {
-        output.writeMessage(101, (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) msgtype_);
-      }
-      if (msgtypeCase_ == 102) {
-        output.writeMessage(102, (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) msgtype_);
+        output.writeMessage(101, (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) msgtype_);
       }
       unknownFields.writeTo(output);
     }
@@ -312,11 +248,7 @@ public final class ProtobufMessages {
       }
       if (msgtypeCase_ == 101) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(101, (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) msgtype_);
-      }
-      if (msgtypeCase_ == 102) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(102, (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) msgtype_);
+          .computeMessageSize(101, (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) msgtype_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -329,10 +261,10 @@ public final class ProtobufMessages {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage)) {
+      if (!(obj instanceof com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage)) {
         return super.equals(obj);
       }
-      com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage other = (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage) obj;
+      com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage other = (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage) obj;
 
       boolean result = true;
       result = result && (hasSource() == other.hasSource());
@@ -345,12 +277,8 @@ public final class ProtobufMessages {
       if (!result) return false;
       switch (msgtypeCase_) {
         case 101:
-          result = result && getGps()
-              .equals(other.getGps());
-          break;
-        case 102:
-          result = result && getMeta()
-              .equals(other.getMeta());
+          result = result && getPathItem()
+              .equals(other.getPathItem());
           break;
         case 0:
         default:
@@ -372,12 +300,8 @@ public final class ProtobufMessages {
       }
       switch (msgtypeCase_) {
         case 101:
-          hash = (37 * hash) + GPS_FIELD_NUMBER;
-          hash = (53 * hash) + getGps().hashCode();
-          break;
-        case 102:
-          hash = (37 * hash) + META_FIELD_NUMBER;
-          hash = (53 * hash) + getMeta().hashCode();
+          hash = (37 * hash) + PATHITEM_FIELD_NUMBER;
+          hash = (53 * hash) + getPathItem().hashCode();
           break;
         case 0:
         default:
@@ -387,69 +311,69 @@ public final class ProtobufMessages {
       return hash;
     }
 
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data.array());
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data.array(), extensionRegistry);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseFrom(byte[] data)
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseFrom(java.io.InputStream input)
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseDelimitedFrom(java.io.InputStream input)
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseDelimitedFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -461,7 +385,7 @@ public final class ProtobufMessages {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage prototype) {
+    public static Builder newBuilder(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -476,25 +400,25 @@ public final class ProtobufMessages {
       return builder;
     }
     /**
-     * Protobuf type {@code mymqttmessages.PathItemMessage}
+     * Protobuf type {@code mymqttmessages.RunMessage}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:mymqttmessages.PathItemMessage)
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessageOrBuilder {
+        // @@protoc_insertion_point(builder_implements:mymqttmessages.RunMessage)
+        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_PathItemMessage_descriptor;
+        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_RunMessage_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_PathItemMessage_fieldAccessorTable
+        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_RunMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage.class, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage.Builder.class);
+                com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage.class, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage.Builder.class);
       }
 
-      // Construct using com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage.newBuilder()
+      // Construct using com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -520,23 +444,23 @@ public final class ProtobufMessages {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_PathItemMessage_descriptor;
+        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_RunMessage_descriptor;
       }
 
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage getDefaultInstanceForType() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage.getDefaultInstance();
+      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage getDefaultInstanceForType() {
+        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage.getDefaultInstance();
       }
 
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage build() {
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage result = buildPartial();
+      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage build() {
+        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage buildPartial() {
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage result = new com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage(this);
+      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage buildPartial() {
+        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage result = new com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -544,17 +468,10 @@ public final class ProtobufMessages {
         }
         result.source_ = source_;
         if (msgtypeCase_ == 101) {
-          if (gpsBuilder_ == null) {
+          if (pathItemBuilder_ == null) {
             result.msgtype_ = msgtype_;
           } else {
-            result.msgtype_ = gpsBuilder_.build();
-          }
-        }
-        if (msgtypeCase_ == 102) {
-          if (metaBuilder_ == null) {
-            result.msgtype_ = msgtype_;
-          } else {
-            result.msgtype_ = metaBuilder_.build();
+            result.msgtype_ = pathItemBuilder_.build();
           }
         }
         result.bitField0_ = to_bitField0_;
@@ -564,52 +481,48 @@ public final class ProtobufMessages {
       }
 
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage) {
-          return mergeFrom((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage)other);
+        if (other instanceof com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage) {
+          return mergeFrom((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage other) {
-        if (other == com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage other) {
+        if (other == com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage.getDefaultInstance()) return this;
         if (other.hasSource()) {
           setSource(other.getSource());
         }
         switch (other.getMsgtypeCase()) {
-          case GPS: {
-            mergeGps(other.getGps());
-            break;
-          }
-          case META: {
-            mergeMeta(other.getMeta());
+          case PATHITEM: {
+            mergePathItem(other.getPathItem());
             break;
           }
           case MSGTYPE_NOT_SET: {
@@ -625,13 +538,8 @@ public final class ProtobufMessages {
         if (!hasSource()) {
           return false;
         }
-        if (hasGps()) {
-          if (!getGps().isInitialized()) {
-            return false;
-          }
-        }
-        if (hasMeta()) {
-          if (!getMeta().isInitialized()) {
+        if (hasPathItem()) {
+          if (!getPathItem().isInitialized()) {
             return false;
           }
         }
@@ -642,11 +550,11 @@ public final class ProtobufMessages {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage parsedMessage = null;
+        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage) e.getUnfinishedMessage();
+          parsedMessage = (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -705,67 +613,67 @@ public final class ProtobufMessages {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.Builder, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessageOrBuilder> gpsBuilder_;
+          com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.Builder, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemOrBuilder> pathItemBuilder_;
       /**
-       * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+       * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
        */
-      public boolean hasGps() {
+      public boolean hasPathItem() {
         return msgtypeCase_ == 101;
       }
       /**
-       * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+       * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
        */
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage getGps() {
-        if (gpsBuilder_ == null) {
+      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem getPathItem() {
+        if (pathItemBuilder_ == null) {
           if (msgtypeCase_ == 101) {
-            return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) msgtype_;
+            return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) msgtype_;
           }
-          return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.getDefaultInstance();
+          return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.getDefaultInstance();
         } else {
           if (msgtypeCase_ == 101) {
-            return gpsBuilder_.getMessage();
+            return pathItemBuilder_.getMessage();
           }
-          return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.getDefaultInstance();
+          return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.getDefaultInstance();
         }
       }
       /**
-       * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+       * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
        */
-      public Builder setGps(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage value) {
-        if (gpsBuilder_ == null) {
+      public Builder setPathItem(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem value) {
+        if (pathItemBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           msgtype_ = value;
           onChanged();
         } else {
-          gpsBuilder_.setMessage(value);
+          pathItemBuilder_.setMessage(value);
         }
         msgtypeCase_ = 101;
         return this;
       }
       /**
-       * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+       * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
        */
-      public Builder setGps(
-          com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.Builder builderForValue) {
-        if (gpsBuilder_ == null) {
+      public Builder setPathItem(
+          com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.Builder builderForValue) {
+        if (pathItemBuilder_ == null) {
           msgtype_ = builderForValue.build();
           onChanged();
         } else {
-          gpsBuilder_.setMessage(builderForValue.build());
+          pathItemBuilder_.setMessage(builderForValue.build());
         }
         msgtypeCase_ = 101;
         return this;
       }
       /**
-       * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+       * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
        */
-      public Builder mergeGps(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage value) {
-        if (gpsBuilder_ == null) {
+      public Builder mergePathItem(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem value) {
+        if (pathItemBuilder_ == null) {
           if (msgtypeCase_ == 101 &&
-              msgtype_ != com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.getDefaultInstance()) {
-            msgtype_ = com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.newBuilder((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) msgtype_)
+              msgtype_ != com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.getDefaultInstance()) {
+            msgtype_ = com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.newBuilder((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) msgtype_)
                 .mergeFrom(value).buildPartial();
           } else {
             msgtype_ = value;
@@ -773,18 +681,18 @@ public final class ProtobufMessages {
           onChanged();
         } else {
           if (msgtypeCase_ == 101) {
-            gpsBuilder_.mergeFrom(value);
+            pathItemBuilder_.mergeFrom(value);
           }
-          gpsBuilder_.setMessage(value);
+          pathItemBuilder_.setMessage(value);
         }
         msgtypeCase_ = 101;
         return this;
       }
       /**
-       * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+       * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
        */
-      public Builder clearGps() {
-        if (gpsBuilder_ == null) {
+      public Builder clearPathItem() {
+        if (pathItemBuilder_ == null) {
           if (msgtypeCase_ == 101) {
             msgtypeCase_ = 0;
             msgtype_ = null;
@@ -795,185 +703,49 @@ public final class ProtobufMessages {
             msgtypeCase_ = 0;
             msgtype_ = null;
           }
-          gpsBuilder_.clear();
+          pathItemBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+       * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
        */
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.Builder getGpsBuilder() {
-        return getGpsFieldBuilder().getBuilder();
+      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.Builder getPathItemBuilder() {
+        return getPathItemFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+       * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
        */
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessageOrBuilder getGpsOrBuilder() {
-        if ((msgtypeCase_ == 101) && (gpsBuilder_ != null)) {
-          return gpsBuilder_.getMessageOrBuilder();
+      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemOrBuilder getPathItemOrBuilder() {
+        if ((msgtypeCase_ == 101) && (pathItemBuilder_ != null)) {
+          return pathItemBuilder_.getMessageOrBuilder();
         } else {
           if (msgtypeCase_ == 101) {
-            return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) msgtype_;
+            return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) msgtype_;
           }
-          return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.getDefaultInstance();
+          return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.getDefaultInstance();
         }
       }
       /**
-       * <code>optional .mymqttmessages.GPSMessage gps = 101;</code>
+       * <code>optional .mymqttmessages.PathItem pathItem = 101;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.Builder, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessageOrBuilder> 
-          getGpsFieldBuilder() {
-        if (gpsBuilder_ == null) {
+          com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.Builder, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemOrBuilder> 
+          getPathItemFieldBuilder() {
+        if (pathItemBuilder_ == null) {
           if (!(msgtypeCase_ == 101)) {
-            msgtype_ = com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.getDefaultInstance();
+            msgtype_ = com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.getDefaultInstance();
           }
-          gpsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.Builder, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessageOrBuilder>(
-                  (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) msgtype_,
+          pathItemBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.Builder, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemOrBuilder>(
+                  (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) msgtype_,
                   getParentForChildren(),
                   isClean());
           msgtype_ = null;
         }
         msgtypeCase_ = 101;
-        onChanged();
-        return gpsBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.Builder, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValuesOrBuilder> metaBuilder_;
-      /**
-       * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-       */
-      public boolean hasMeta() {
-        return msgtypeCase_ == 102;
-      }
-      /**
-       * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-       */
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues getMeta() {
-        if (metaBuilder_ == null) {
-          if (msgtypeCase_ == 102) {
-            return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) msgtype_;
-          }
-          return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.getDefaultInstance();
-        } else {
-          if (msgtypeCase_ == 102) {
-            return metaBuilder_.getMessage();
-          }
-          return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-       */
-      public Builder setMeta(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues value) {
-        if (metaBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          msgtype_ = value;
-          onChanged();
-        } else {
-          metaBuilder_.setMessage(value);
-        }
-        msgtypeCase_ = 102;
-        return this;
-      }
-      /**
-       * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-       */
-      public Builder setMeta(
-          com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.Builder builderForValue) {
-        if (metaBuilder_ == null) {
-          msgtype_ = builderForValue.build();
-          onChanged();
-        } else {
-          metaBuilder_.setMessage(builderForValue.build());
-        }
-        msgtypeCase_ = 102;
-        return this;
-      }
-      /**
-       * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-       */
-      public Builder mergeMeta(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues value) {
-        if (metaBuilder_ == null) {
-          if (msgtypeCase_ == 102 &&
-              msgtype_ != com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.getDefaultInstance()) {
-            msgtype_ = com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.newBuilder((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) msgtype_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            msgtype_ = value;
-          }
-          onChanged();
-        } else {
-          if (msgtypeCase_ == 102) {
-            metaBuilder_.mergeFrom(value);
-          }
-          metaBuilder_.setMessage(value);
-        }
-        msgtypeCase_ = 102;
-        return this;
-      }
-      /**
-       * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-       */
-      public Builder clearMeta() {
-        if (metaBuilder_ == null) {
-          if (msgtypeCase_ == 102) {
-            msgtypeCase_ = 0;
-            msgtype_ = null;
-            onChanged();
-          }
-        } else {
-          if (msgtypeCase_ == 102) {
-            msgtypeCase_ = 0;
-            msgtype_ = null;
-          }
-          metaBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-       */
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.Builder getMetaBuilder() {
-        return getMetaFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-       */
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValuesOrBuilder getMetaOrBuilder() {
-        if ((msgtypeCase_ == 102) && (metaBuilder_ != null)) {
-          return metaBuilder_.getMessageOrBuilder();
-        } else {
-          if (msgtypeCase_ == 102) {
-            return (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) msgtype_;
-          }
-          return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>optional .mymqttmessages.MetaValues meta = 102;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.Builder, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValuesOrBuilder> 
-          getMetaFieldBuilder() {
-        if (metaBuilder_ == null) {
-          if (!(msgtypeCase_ == 102)) {
-            msgtype_ = com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.getDefaultInstance();
-          }
-          metaBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.Builder, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValuesOrBuilder>(
-                  (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) msgtype_,
-                  getParentForChildren(),
-                  isClean());
-          msgtype_ = null;
-        }
-        msgtypeCase_ = 102;
-        onChanged();
-        return metaBuilder_;
+        onChanged();;
+        return pathItemBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -986,96 +758,116 @@ public final class ProtobufMessages {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:mymqttmessages.PathItemMessage)
+      // @@protoc_insertion_point(builder_scope:mymqttmessages.RunMessage)
     }
 
-    // @@protoc_insertion_point(class_scope:mymqttmessages.PathItemMessage)
-    private static final com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:mymqttmessages.RunMessage)
+    private static final com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage();
+      DEFAULT_INSTANCE = new com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage();
     }
 
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage getDefaultInstance() {
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    public static final com.google.protobuf.Parser<PathItemMessage>
-        PARSER = new com.google.protobuf.AbstractParser<PathItemMessage>() {
-      public PathItemMessage parsePartialFrom(
+    public static final com.google.protobuf.Parser<RunMessage>
+        PARSER = new com.google.protobuf.AbstractParser<RunMessage>() {
+      public RunMessage parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PathItemMessage(input, extensionRegistry);
+          return new RunMessage(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<PathItemMessage> parser() {
+    public static com.google.protobuf.Parser<RunMessage> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PathItemMessage> getParserForType() {
+    public com.google.protobuf.Parser<RunMessage> getParserForType() {
       return PARSER;
     }
 
-    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemMessage getDefaultInstanceForType() {
+    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.RunMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface MetaValuesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:mymqttmessages.MetaValues)
+  public interface PathItemOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:mymqttmessages.PathItem)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint64 time = 1;</code>
+     * <code>required double latitude = 1;</code>
+     */
+    boolean hasLatitude();
+    /**
+     * <code>required double latitude = 1;</code>
+     */
+    double getLatitude();
+
+    /**
+     * <code>required double longitude = 2;</code>
+     */
+    boolean hasLongitude();
+    /**
+     * <code>required double longitude = 2;</code>
+     */
+    double getLongitude();
+
+    /**
+     * <code>required uint64 time = 3;</code>
      */
     boolean hasTime();
     /**
-     * <code>required uint64 time = 1;</code>
+     * <code>required uint64 time = 3;</code>
      */
     long getTime();
 
     /**
-     * <code>required double distance = 2;</code>
+     * <code>required double distance = 4;</code>
      */
     boolean hasDistance();
     /**
-     * <code>required double distance = 2;</code>
+     * <code>required double distance = 4;</code>
      */
     double getDistance();
 
     /**
-     * <code>required double speed = 3;</code>
+     * <code>required double speed = 5;</code>
      */
     boolean hasSpeed();
     /**
-     * <code>required double speed = 3;</code>
+     * <code>required double speed = 5;</code>
      */
     double getSpeed();
 
     /**
-     * <code>required uint32 steps = 4;</code>
+     * <code>required uint32 steps = 6;</code>
      */
     boolean hasSteps();
     /**
-     * <code>required uint32 steps = 4;</code>
+     * <code>required uint32 steps = 6;</code>
      */
     int getSteps();
   }
   /**
-   * Protobuf type {@code mymqttmessages.MetaValues}
+   * Protobuf type {@code mymqttmessages.PathItem}
    */
-  public  static final class MetaValues extends
+  public  static final class PathItem extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:mymqttmessages.MetaValues)
-      MetaValuesOrBuilder {
-    // Use MetaValues.newBuilder() to construct.
-    private MetaValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:mymqttmessages.PathItem)
+      PathItemOrBuilder {
+    // Use PathItem.newBuilder() to construct.
+    private PathItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MetaValues() {
+    private PathItem() {
+      latitude_ = 0D;
+      longitude_ = 0D;
       time_ = 0L;
       distance_ = 0D;
       speed_ = 0D;
@@ -1087,7 +879,7 @@ public final class ProtobufMessages {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MetaValues(
+    private PathItem(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1110,23 +902,33 @@ public final class ProtobufMessages {
               }
               break;
             }
-            case 8: {
+            case 9: {
               bitField0_ |= 0x00000001;
-              time_ = input.readUInt64();
+              latitude_ = input.readDouble();
               break;
             }
             case 17: {
               bitField0_ |= 0x00000002;
+              longitude_ = input.readDouble();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              time_ = input.readUInt64();
+              break;
+            }
+            case 33: {
+              bitField0_ |= 0x00000008;
               distance_ = input.readDouble();
               break;
             }
-            case 25: {
-              bitField0_ |= 0x00000004;
+            case 41: {
+              bitField0_ |= 0x00000010;
               speed_ = input.readDouble();
               break;
             }
-            case 32: {
-              bitField0_ |= 0x00000008;
+            case 48: {
+              bitField0_ |= 0x00000020;
               steps_ = input.readUInt32();
               break;
             }
@@ -1144,72 +946,102 @@ public final class ProtobufMessages {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_MetaValues_descriptor;
+      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_PathItem_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_MetaValues_fieldAccessorTable
+      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_PathItem_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.class, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.Builder.class);
+              com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.class, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.Builder.class);
     }
 
     private int bitField0_;
-    public static final int TIME_FIELD_NUMBER = 1;
-    private long time_;
+    public static final int LATITUDE_FIELD_NUMBER = 1;
+    private double latitude_;
     /**
-     * <code>required uint64 time = 1;</code>
+     * <code>required double latitude = 1;</code>
      */
-    public boolean hasTime() {
+    public boolean hasLatitude() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint64 time = 1;</code>
+     * <code>required double latitude = 1;</code>
+     */
+    public double getLatitude() {
+      return latitude_;
+    }
+
+    public static final int LONGITUDE_FIELD_NUMBER = 2;
+    private double longitude_;
+    /**
+     * <code>required double longitude = 2;</code>
+     */
+    public boolean hasLongitude() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required double longitude = 2;</code>
+     */
+    public double getLongitude() {
+      return longitude_;
+    }
+
+    public static final int TIME_FIELD_NUMBER = 3;
+    private long time_;
+    /**
+     * <code>required uint64 time = 3;</code>
+     */
+    public boolean hasTime() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required uint64 time = 3;</code>
      */
     public long getTime() {
       return time_;
     }
 
-    public static final int DISTANCE_FIELD_NUMBER = 2;
+    public static final int DISTANCE_FIELD_NUMBER = 4;
     private double distance_;
     /**
-     * <code>required double distance = 2;</code>
+     * <code>required double distance = 4;</code>
      */
     public boolean hasDistance() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required double distance = 2;</code>
+     * <code>required double distance = 4;</code>
      */
     public double getDistance() {
       return distance_;
     }
 
-    public static final int SPEED_FIELD_NUMBER = 3;
+    public static final int SPEED_FIELD_NUMBER = 5;
     private double speed_;
     /**
-     * <code>required double speed = 3;</code>
+     * <code>required double speed = 5;</code>
      */
     public boolean hasSpeed() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required double speed = 3;</code>
+     * <code>required double speed = 5;</code>
      */
     public double getSpeed() {
       return speed_;
     }
 
-    public static final int STEPS_FIELD_NUMBER = 4;
+    public static final int STEPS_FIELD_NUMBER = 6;
     private int steps_;
     /**
-     * <code>required uint32 steps = 4;</code>
+     * <code>required uint32 steps = 6;</code>
      */
     public boolean hasSteps() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required uint32 steps = 4;</code>
+     * <code>required uint32 steps = 6;</code>
      */
     public int getSteps() {
       return steps_;
@@ -1221,6 +1053,14 @@ public final class ProtobufMessages {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
+      if (!hasLatitude()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasLongitude()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       if (!hasTime()) {
         memoizedIsInitialized = 0;
         return false;
@@ -1244,16 +1084,22 @@ public final class ProtobufMessages {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt64(1, time_);
+        output.writeDouble(1, latitude_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeDouble(2, distance_);
+        output.writeDouble(2, longitude_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeDouble(3, speed_);
+        output.writeUInt64(3, time_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeUInt32(4, steps_);
+        output.writeDouble(4, distance_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeDouble(5, speed_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeUInt32(6, steps_);
       }
       unknownFields.writeTo(output);
     }
@@ -1265,19 +1111,27 @@ public final class ProtobufMessages {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, time_);
+          .computeDoubleSize(1, latitude_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(2, distance_);
+          .computeDoubleSize(2, longitude_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, speed_);
+          .computeUInt64Size(3, time_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, steps_);
+          .computeDoubleSize(4, distance_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, speed_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, steps_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1290,12 +1144,26 @@ public final class ProtobufMessages {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues)) {
+      if (!(obj instanceof com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem)) {
         return super.equals(obj);
       }
-      com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues other = (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) obj;
+      com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem other = (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) obj;
 
       boolean result = true;
+      result = result && (hasLatitude() == other.hasLatitude());
+      if (hasLatitude()) {
+        result = result && (
+            java.lang.Double.doubleToLongBits(getLatitude())
+            == java.lang.Double.doubleToLongBits(
+                other.getLatitude()));
+      }
+      result = result && (hasLongitude() == other.hasLongitude());
+      if (hasLongitude()) {
+        result = result && (
+            java.lang.Double.doubleToLongBits(getLongitude())
+            == java.lang.Double.doubleToLongBits(
+                other.getLongitude()));
+      }
       result = result && (hasTime() == other.hasTime());
       if (hasTime()) {
         result = result && (getTime()
@@ -1331,6 +1199,16 @@ public final class ProtobufMessages {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasLatitude()) {
+        hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getLatitude()));
+      }
+      if (hasLongitude()) {
+        hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getLongitude()));
+      }
       if (hasTime()) {
         hash = (37 * hash) + TIME_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -1355,69 +1233,69 @@ public final class ProtobufMessages {
       return hash;
     }
 
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data.array());
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data.array(), extensionRegistry);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseFrom(byte[] data)
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseFrom(java.io.InputStream input)
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseDelimitedFrom(java.io.InputStream input)
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseDelimitedFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parseFrom(
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1429,7 +1307,7 @@ public final class ProtobufMessages {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues prototype) {
+    public static Builder newBuilder(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1444,694 +1322,25 @@ public final class ProtobufMessages {
       return builder;
     }
     /**
-     * Protobuf type {@code mymqttmessages.MetaValues}
+     * Protobuf type {@code mymqttmessages.PathItem}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:mymqttmessages.MetaValues)
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValuesOrBuilder {
+        // @@protoc_insertion_point(builder_implements:mymqttmessages.PathItem)
+        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItemOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_MetaValues_descriptor;
+        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_PathItem_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_MetaValues_fieldAccessorTable
+        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_PathItem_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.class, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.Builder.class);
+                com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.class, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.Builder.class);
       }
 
-      // Construct using com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        time_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        distance_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        speed_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        steps_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_MetaValues_descriptor;
-      }
-
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues getDefaultInstanceForType() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.getDefaultInstance();
-      }
-
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues build() {
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues buildPartial() {
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues result = new com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.time_ = time_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.distance_ = distance_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.speed_ = speed_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.steps_ = steps_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) {
-          return mergeFrom((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues other) {
-        if (other == com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues.getDefaultInstance()) return this;
-        if (other.hasTime()) {
-          setTime(other.getTime());
-        }
-        if (other.hasDistance()) {
-          setDistance(other.getDistance());
-        }
-        if (other.hasSpeed()) {
-          setSpeed(other.getSpeed());
-        }
-        if (other.hasSteps()) {
-          setSteps(other.getSteps());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasTime()) {
-          return false;
-        }
-        if (!hasDistance()) {
-          return false;
-        }
-        if (!hasSpeed()) {
-          return false;
-        }
-        return hasSteps();
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private long time_ ;
-      /**
-       * <code>required uint64 time = 1;</code>
-       */
-      public boolean hasTime() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required uint64 time = 1;</code>
-       */
-      public long getTime() {
-        return time_;
-      }
-      /**
-       * <code>required uint64 time = 1;</code>
-       */
-      public Builder setTime(long value) {
-        bitField0_ |= 0x00000001;
-        time_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required uint64 time = 1;</code>
-       */
-      public Builder clearTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        time_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private double distance_ ;
-      /**
-       * <code>required double distance = 2;</code>
-       */
-      public boolean hasDistance() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required double distance = 2;</code>
-       */
-      public double getDistance() {
-        return distance_;
-      }
-      /**
-       * <code>required double distance = 2;</code>
-       */
-      public Builder setDistance(double value) {
-        bitField0_ |= 0x00000002;
-        distance_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required double distance = 2;</code>
-       */
-      public Builder clearDistance() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        distance_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double speed_ ;
-      /**
-       * <code>required double speed = 3;</code>
-       */
-      public boolean hasSpeed() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required double speed = 3;</code>
-       */
-      public double getSpeed() {
-        return speed_;
-      }
-      /**
-       * <code>required double speed = 3;</code>
-       */
-      public Builder setSpeed(double value) {
-        bitField0_ |= 0x00000004;
-        speed_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required double speed = 3;</code>
-       */
-      public Builder clearSpeed() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        speed_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private int steps_ ;
-      /**
-       * <code>required uint32 steps = 4;</code>
-       */
-      public boolean hasSteps() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>required uint32 steps = 4;</code>
-       */
-      public int getSteps() {
-        return steps_;
-      }
-      /**
-       * <code>required uint32 steps = 4;</code>
-       */
-      public Builder setSteps(int value) {
-        bitField0_ |= 0x00000008;
-        steps_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required uint32 steps = 4;</code>
-       */
-      public Builder clearSteps() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        steps_ = 0;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:mymqttmessages.MetaValues)
-    }
-
-    // @@protoc_insertion_point(class_scope:mymqttmessages.MetaValues)
-    private static final com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues();
-    }
-
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-   public static final com.google.protobuf.Parser<MetaValues>
-        PARSER = new com.google.protobuf.AbstractParser<MetaValues>() {
-      public MetaValues parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MetaValues(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<MetaValues> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MetaValues> getParserForType() {
-      return PARSER;
-    }
-
-    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.MetaValues getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface GPSMessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:mymqttmessages.GPSMessage)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>required double latitude = 1;</code>
-     */
-    boolean hasLatitude();
-    /**
-     * <code>required double latitude = 1;</code>
-     */
-    double getLatitude();
-
-    /**
-     * <code>required double longitude = 2;</code>
-     */
-    boolean hasLongitude();
-    /**
-     * <code>required double longitude = 2;</code>
-     */
-    double getLongitude();
-  }
-  /**
-   * Protobuf type {@code mymqttmessages.GPSMessage}
-   */
-  public  static final class GPSMessage extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:mymqttmessages.GPSMessage)
-      GPSMessageOrBuilder {
-    // Use GPSMessage.newBuilder() to construct.
-    private GPSMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private GPSMessage() {
-      latitude_ = 0D;
-      longitude_ = 0D;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private GPSMessage(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 9: {
-              bitField0_ |= 0x00000001;
-              latitude_ = input.readDouble();
-              break;
-            }
-            case 17: {
-              bitField0_ |= 0x00000002;
-              longitude_ = input.readDouble();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_GPSMessage_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_GPSMessage_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.class, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int LATITUDE_FIELD_NUMBER = 1;
-    private double latitude_;
-    /**
-     * <code>required double latitude = 1;</code>
-     */
-    public boolean hasLatitude() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required double latitude = 1;</code>
-     */
-    public double getLatitude() {
-      return latitude_;
-    }
-
-    public static final int LONGITUDE_FIELD_NUMBER = 2;
-    private double longitude_;
-    /**
-     * <code>required double longitude = 2;</code>
-     */
-    public boolean hasLongitude() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required double longitude = 2;</code>
-     */
-    public double getLongitude() {
-      return longitude_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasLatitude()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasLongitude()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeDouble(1, latitude_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeDouble(2, longitude_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(1, latitude_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(2, longitude_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage)) {
-        return super.equals(obj);
-      }
-      com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage other = (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) obj;
-
-      boolean result = true;
-      result = result && (hasLatitude() == other.hasLatitude());
-      if (hasLatitude()) {
-        result = result && (
-            java.lang.Double.doubleToLongBits(getLatitude())
-            == java.lang.Double.doubleToLongBits(
-                other.getLatitude()));
-      }
-      result = result && (hasLongitude() == other.hasLongitude());
-      if (hasLongitude()) {
-        result = result && (
-            java.lang.Double.doubleToLongBits(getLongitude())
-            == java.lang.Double.doubleToLongBits(
-                other.getLongitude()));
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasLatitude()) {
-        hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLatitude()));
-      }
-      if (hasLongitude()) {
-        hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLongitude()));
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data.array());
-    }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data.array(), extensionRegistry);
-    }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code mymqttmessages.GPSMessage}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:mymqttmessages.GPSMessage)
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessageOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_GPSMessage_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_GPSMessage_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.class, com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.Builder.class);
-      }
-
-      // Construct using com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.newBuilder()
+      // Construct using com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2152,28 +1361,36 @@ public final class ProtobufMessages {
         bitField0_ = (bitField0_ & ~0x00000001);
         longitude_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000002);
+        time_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        distance_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        speed_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        steps_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_GPSMessage_descriptor;
+        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.internal_static_mymqttmessages_PathItem_descriptor;
       }
 
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage getDefaultInstanceForType() {
-        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.getDefaultInstance();
+      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem getDefaultInstanceForType() {
+        return com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.getDefaultInstance();
       }
 
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage build() {
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage result = buildPartial();
+      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem build() {
+        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage buildPartial() {
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage result = new com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage(this);
+      public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem buildPartial() {
+        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem result = new com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2184,53 +1401,81 @@ public final class ProtobufMessages {
           to_bitField0_ |= 0x00000002;
         }
         result.longitude_ = longitude_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.time_ = time_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.distance_ = distance_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.speed_ = speed_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.steps_ = steps_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) {
-          return mergeFrom((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage)other);
+        if (other instanceof com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) {
+          return mergeFrom((com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage other) {
-        if (other == com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem other) {
+        if (other == com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem.getDefaultInstance()) return this;
         if (other.hasLatitude()) {
           setLatitude(other.getLatitude());
         }
         if (other.hasLongitude()) {
           setLongitude(other.getLongitude());
+        }
+        if (other.hasTime()) {
+          setTime(other.getTime());
+        }
+        if (other.hasDistance()) {
+          setDistance(other.getDistance());
+        }
+        if (other.hasSpeed()) {
+          setSpeed(other.getSpeed());
+        }
+        if (other.hasSteps()) {
+          setSteps(other.getSteps());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2241,18 +1486,33 @@ public final class ProtobufMessages {
         if (!hasLatitude()) {
           return false;
         }
-        return hasLongitude();
+        if (!hasLongitude()) {
+          return false;
+        }
+        if (!hasTime()) {
+          return false;
+        }
+        if (!hasDistance()) {
+          return false;
+        }
+        if (!hasSpeed()) {
+          return false;
+        }
+        if (!hasSteps()) {
+          return false;
+        }
+        return true;
       }
 
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage parsedMessage = null;
+        com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage) e.getUnfinishedMessage();
+          parsedMessage = (com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2326,6 +1586,134 @@ public final class ProtobufMessages {
         onChanged();
         return this;
       }
+
+      private long time_ ;
+      /**
+       * <code>required uint64 time = 3;</code>
+       */
+      public boolean hasTime() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required uint64 time = 3;</code>
+       */
+      public long getTime() {
+        return time_;
+      }
+      /**
+       * <code>required uint64 time = 3;</code>
+       */
+      public Builder setTime(long value) {
+        bitField0_ |= 0x00000004;
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint64 time = 3;</code>
+       */
+      public Builder clearTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        time_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double distance_ ;
+      /**
+       * <code>required double distance = 4;</code>
+       */
+      public boolean hasDistance() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required double distance = 4;</code>
+       */
+      public double getDistance() {
+        return distance_;
+      }
+      /**
+       * <code>required double distance = 4;</code>
+       */
+      public Builder setDistance(double value) {
+        bitField0_ |= 0x00000008;
+        distance_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required double distance = 4;</code>
+       */
+      public Builder clearDistance() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        distance_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double speed_ ;
+      /**
+       * <code>required double speed = 5;</code>
+       */
+      public boolean hasSpeed() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required double speed = 5;</code>
+       */
+      public double getSpeed() {
+        return speed_;
+      }
+      /**
+       * <code>required double speed = 5;</code>
+       */
+      public Builder setSpeed(double value) {
+        bitField0_ |= 0x00000010;
+        speed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required double speed = 5;</code>
+       */
+      public Builder clearSpeed() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        speed_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int steps_ ;
+      /**
+       * <code>required uint32 steps = 6;</code>
+       */
+      public boolean hasSteps() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>required uint32 steps = 6;</code>
+       */
+      public int getSteps() {
+        return steps_;
+      }
+      /**
+       * <code>required uint32 steps = 6;</code>
+       */
+      public Builder setSteps(int value) {
+        bitField0_ |= 0x00000020;
+        steps_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint32 steps = 6;</code>
+       */
+      public Builder clearSteps() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        steps_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
@@ -2337,59 +1725,54 @@ public final class ProtobufMessages {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:mymqttmessages.GPSMessage)
+      // @@protoc_insertion_point(builder_scope:mymqttmessages.PathItem)
     }
 
-    // @@protoc_insertion_point(class_scope:mymqttmessages.GPSMessage)
-    private static final com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:mymqttmessages.PathItem)
+    private static final com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage();
+      DEFAULT_INSTANCE = new com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem();
     }
 
-    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage getDefaultInstance() {
+    public static com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-      public static final com.google.protobuf.Parser<GPSMessage>
-        PARSER = new com.google.protobuf.AbstractParser<GPSMessage>() {
-      public GPSMessage parsePartialFrom(
+    public static final com.google.protobuf.Parser<PathItem>
+        PARSER = new com.google.protobuf.AbstractParser<PathItem>() {
+      public PathItem parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GPSMessage(input, extensionRegistry);
+          return new PathItem(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GPSMessage> parser() {
+    public static com.google.protobuf.Parser<PathItem> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GPSMessage> getParserForType() {
+    public com.google.protobuf.Parser<PathItem> getParserForType() {
       return PARSER;
     }
 
-    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.GPSMessage getDefaultInstanceForType() {
+    public com.example.harald.runwithme2.mymqttmessages.ProtobufMessages.PathItem getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_mymqttmessages_PathItemMessage_descriptor;
+    internal_static_mymqttmessages_RunMessage_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_mymqttmessages_PathItemMessage_fieldAccessorTable;
+      internal_static_mymqttmessages_RunMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_mymqttmessages_MetaValues_descriptor;
+    internal_static_mymqttmessages_PathItem_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_mymqttmessages_MetaValues_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_mymqttmessages_GPSMessage_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_mymqttmessages_GPSMessage_fieldAccessorTable;
+      internal_static_mymqttmessages_PathItem_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2399,16 +1782,14 @@ public final class ProtobufMessages {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024mymqttmessages.proto\022\016mymqttmessages\"\203" +
-      "\001\n\017PathItemMessage\022\016\n\006source\030\001 \002(\r\022)\n\003gp" +
-      "s\030e \001(\0132\032.mymqttmessages.GPSMessageH\000\022*\n" +
-      "\004meta\030f \001(\0132\032.mymqttmessages.MetaValuesH" +
-      "\000B\t\n\007msgtype\"J\n\nMetaValues\022\014\n\004time\030\001 \002(\004" +
-      "\022\020\n\010distance\030\002 \002(\001\022\r\n\005speed\030\003 \002(\001\022\r\n\005ste" +
-      "ps\030\004 \002(\r\"1\n\nGPSMessage\022\020\n\010latitude\030\001 \002(\001" +
-      "\022\021\n\tlongitude\030\002 \002(\001B@\n,com.example.haral" +
-      "d.runwithme2.mymqttmessagesB\020ProtobufMes" +
-      "sages"
+      "\n\024mymqttmessages.proto\022\016mymqttmessages\"U" +
+      "\n\nRunMessage\022\016\n\006source\030\001 \002(\r\022,\n\010pathItem" +
+      "\030e \001(\0132\030.mymqttmessages.PathItemH\000B\t\n\007ms" +
+      "gtype\"m\n\010PathItem\022\020\n\010latitude\030\001 \002(\001\022\021\n\tl" +
+      "ongitude\030\002 \002(\001\022\014\n\004time\030\003 \002(\004\022\020\n\010distance" +
+      "\030\004 \002(\001\022\r\n\005speed\030\005 \002(\001\022\r\n\005steps\030\006 \002(\rB@\n," +
+      "com.example.harald.runwithme2.mymqttmess" +
+      "agesB\020ProtobufMessages"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2422,24 +1803,18 @@ public final class ProtobufMessages {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_mymqttmessages_PathItemMessage_descriptor =
+    internal_static_mymqttmessages_RunMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_mymqttmessages_PathItemMessage_fieldAccessorTable = new
+    internal_static_mymqttmessages_RunMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_mymqttmessages_PathItemMessage_descriptor,
-        new java.lang.String[] { "Source", "Gps", "Meta", "Msgtype", });
-    internal_static_mymqttmessages_MetaValues_descriptor =
+        internal_static_mymqttmessages_RunMessage_descriptor,
+        new java.lang.String[] { "Source", "PathItem", "Msgtype", });
+    internal_static_mymqttmessages_PathItem_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_mymqttmessages_MetaValues_fieldAccessorTable = new
+    internal_static_mymqttmessages_PathItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_mymqttmessages_MetaValues_descriptor,
-        new java.lang.String[] { "Time", "Distance", "Speed", "Steps", });
-    internal_static_mymqttmessages_GPSMessage_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_mymqttmessages_GPSMessage_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_mymqttmessages_GPSMessage_descriptor,
-        new java.lang.String[] { "Latitude", "Longitude", });
+        internal_static_mymqttmessages_PathItem_descriptor,
+        new java.lang.String[] { "Latitude", "Longitude", "Time", "Distance", "Speed", "Steps", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

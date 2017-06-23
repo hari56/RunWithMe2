@@ -11,7 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IDataConsumer {
+
 
     private TextView mTextMessage;
     private Button btnNext;
@@ -38,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             super.onCreate(savedInstanceState);
+            //restore the model
+            Bundle b = this.getIntent().getExtras();
+            if (b != null) {
+                this.model = (Model) b.getSerializable("model");
+                this.model.setupProtoBuf(this);
+            }
+
+
             setContentView(R.layout.activity_main);
 
             this.model = new Model();
@@ -77,9 +86,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void showMessage(String message)
+    public void showMessage(String message)
     {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+    }
+    @Override
+    public void updateMap() {
+
     }
 
 }

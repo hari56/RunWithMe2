@@ -16,11 +16,12 @@ public class PathItem implements Serializable {
     private Double speed;
     private Integer steps;
 
-    public PathItem(GPSPosition position, Long time, Double distance, Double speed) {
+    public PathItem(GPSPosition position, Long time, Double distance, Double speed, Integer steps) {
         this.position = position;
         this.time = time;
         this.distance = distance;
         this.speed = speed;
+        this.steps = steps;
     }
 
     public boolean runFaster(Double desiredSpeed) {
